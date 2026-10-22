@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Module contains function that register all Flask BluePrints to flask application
 """

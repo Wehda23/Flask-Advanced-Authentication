@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 File contains settings for flask application
 """

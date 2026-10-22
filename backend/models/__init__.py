@@ -1,3 +1,4 @@
+from __future__ import annotations
 __all__ = ["db", "Users", "Employees", "Managers", "TrackModel"]
 
 from .base_model import db

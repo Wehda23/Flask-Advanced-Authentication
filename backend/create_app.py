@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Module contains function to create flask application
 """

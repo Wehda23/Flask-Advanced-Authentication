@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Module contails function to initialize database models and app database configurations
 """

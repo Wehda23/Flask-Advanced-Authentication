@@ -1,3 +1,4 @@
+from __future__ import annotations
 __all__ = ["users_api", "employees_api", "managers_api"]
 
 from .users import users_api

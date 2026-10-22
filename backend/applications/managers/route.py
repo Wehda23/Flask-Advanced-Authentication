@@ -1,3 +1,4 @@
+from __future__ import annotations
 """
 Module creating the blueprint for managers api
 
