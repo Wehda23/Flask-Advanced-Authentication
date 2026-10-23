@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `is_blacklisted()` was ignoring `rule_name`, always reading the default rule's blacklist setting
 - Added `_reset()` class methods to `Database` and `JWTAuthenticationRules` singletons for test isolation
 
-## [0.1.0] - TBD
+## [0.1.1] - 2026-10-23
+
+### Added
+- "Support My Work" section with donation options (PayPal, Buy Me a Coffee) in README.
+
+## [0.1.0] - 2026-10-22
 
 _Initial public release._
