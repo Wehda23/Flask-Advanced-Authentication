@@ -150,6 +150,63 @@ Rules are passed as a dictionary where each key represents a rule name (e.g. `"d
 
 ---
 
+## 🎯 Multi-Token Architecture Guide
+
+You can define multiple token rules tailored for completely different purposes across your application:
+
+```python
+import os
+from datetime import timedelta
+
+JWT_AUTHENTICATION_RULES = {
+    # 1. Stateful Login Token (Tracked in DB + Blacklisted)
+    "user_login": {
+        "description": "Standard app login",
+        "secret_key": os.getenv("JWT_SECRET_USER"),
+        "algorithm": "HS256",
+        "access_token_lifetime": timedelta(minutes=15),
+        "refresh_token_lifetime": timedelta(days=7),
+        "track_created": True,
+        "track_created_table_path": "myapp.models.TrackedToken",
+        "blacklisted": True,
+        "blacklisted_table_path": "myapp.models.BlacklistToken",
+    },
+
+    # 2. Completely Stateless Email Verification (NO Database needed)
+    "email_verification": {
+        "description": "Email confirm token for registration",
+        "secret_key": os.getenv("JWT_SECRET_EMAIL"),
+        "algorithm": "HS256",
+        "access_token_lifetime": timedelta(hours=24),
+        "table": False,
+        "track_created": False,   # Zero DB overhead!
+        "blacklisted": False,
+    },
+
+    # 3. Live Streaming / WebSocket Token (Extracted via URL Query Parameter)
+    "live_stream": {
+        "description": "Video stream viewer auth token",
+        "secret_key": os.getenv("JWT_SECRET_STREAM"),
+        "algorithm": "HS256",
+        "access_token_lifetime": timedelta(hours=3),
+        "table": False,
+        "track_created": False,
+    },
+
+    # 4. Password Reset Token (Strict, 10 minutes)
+    "password_reset": {
+        "description": "One-time password reset",
+        "secret_key": os.getenv("JWT_SECRET_RESET"),
+        "algorithm": "HS256",
+        "access_token_lifetime": timedelta(minutes=10),
+        "table": False,
+        "track_created": False,
+    }
+}
+```
+
+---
+
 ## 🧩 Authentication Strategies
 
 You can choose how tokens are extracted by passing different authentication classes to `@authenticate`:
@@ -224,11 +281,7 @@ If you find my free content and projects helpful, consider supporting me to enab
 
 ### Ways to Support
 
-You can contribute by making a donation through PayPal:
-
-[![Donate](https://img.shields.me/badge/Donate-PayPal-blue.svg)](https://paypal.me/Waheedkhaled?country.x=EG&locale.x=en_US)
-
-You can contribute by making a donation through Buy Me a Coffee:
+You can support the project by buying me a coffee:
 
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/waheedKh)
 

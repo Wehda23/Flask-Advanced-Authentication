@@ -28,6 +28,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `is_blacklisted()` was ignoring `rule_name`, always reading the default rule's blacklist setting
 - Added `_reset()` class methods to `Database` and `JWTAuthenticationRules` singletons for test isolation
 
+## [0.1.3] - 2026-10-23
+
+### Added
+- Multi-token architecture guide in `README.md` showcasing stateful login, stateless verification, streaming, and password reset configurations.
+
+### Removed
+- Removed PayPal donation link from `README.md`.
+
 ## [0.1.2] - 2026-10-23
 
 ### Fixed
