@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "flask-advanced-auth"
-version = "0.1.1"
+version = "0.1.2"
 description = "Advanced JWT authentication for Flask with multi-rule support, token tracking, and blacklisting."
 readme = "README.md"
 license = { text = "MIT" }

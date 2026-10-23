@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `is_blacklisted()` was ignoring `rule_name`, always reading the default rule's blacklist setting
 - Added `_reset()` class methods to `Database` and `JWTAuthenticationRules` singletons for test isolation
 
+## [0.1.2] - 2026-10-23
+
+### Fixed
+- Cleaned up duplicate "Support My Work" section and clarified sponsorship subheadings in `README.md`.
+
 ## [0.1.1] - 2026-10-23
 
 ### Added

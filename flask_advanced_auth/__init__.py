@@ -35,7 +35,7 @@ from .exceptions import (
     TokenTypeMismatch,
 )
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Waheed"
 __license__ = "MIT"
 
